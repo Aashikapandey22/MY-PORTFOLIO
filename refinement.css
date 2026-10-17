@@ -1,0 +1,88 @@
+:root {
+  --cream: #f8f1de;
+  --white: #fffdf8;
+  --pink: #f35aa6;
+  --blush: #f5d4df;
+  --brown: #50332f;
+  --espresso: #20191c;
+  --rose: #d63d86;
+  --line: rgba(80, 51, 47, .25);
+  --shadow: 8px 10px 0 rgba(80, 51, 47, .14);
+}
+
+.boot-log { position:absolute; bottom:8vh; display:grid; gap:5px; font:10px 'DM Mono'; letter-spacing:.06em; text-align:center; }
+.boot-log span:last-child { color:var(--rose); }
+.boot-log i { font-style:normal; }
+.hero-nav { position:absolute; left:clamp(190px,18vw,280px); bottom:4vw; display:flex; gap:9px; flex-wrap:wrap; max-width:390px; }
+.curtain { transition: background-color .7s ease; }
+.curtain.open { background-color: transparent; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:8px; }
+.hero-actions .button { margin-top:18px; }
+@media (min-width:801px) {
+  .hero { grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr); padding-left:clamp(190px,18vw,260px); padding-right:8vw; }
+  .hero-copy { min-width:0; position:relative; z-index:2; }
+  .desk-scene { min-width:0; }
+}
+.button-light { background:var(--white); color:var(--brown); }
+.hero-nav a { font:10px 'DM Mono'; padding:8px 10px; background:var(--white); border:1px solid var(--brown); box-shadow:3px 3px 0 var(--pink); transition:.2s; }
+.hero-nav a:hover { background:var(--pink); transform:translateY(-3px); }
+.bio-window { align-self:center; transform:rotate(-2deg); margin-left:-16%; z-index:4; background:var(--cream); }
+.window-copy { padding:20px; font:1.05rem/1.28 'DM Serif Display'; }
+.window-copy p { margin:0 0 14px; }
+.socials-window { z-index:5; }
+.night .hero-nav a { background:var(--white); color:var(--brown); }
+.theme-orbit { display:inline-block; width:18px; height:18px; border:1px solid currentColor; border-radius:50%; position:relative; }
+.theme-orbit:after { content:''; position:absolute; inset:-4px 2px; border:1px solid var(--rose); border-radius:50%; transform:rotate(-28deg); }
+.theme-orbit i { display:block; width:6px; height:6px; border-radius:50%; background:var(--pink); margin:5px; }
+.cursor-dot { position:fixed; top:-10px; left:-10px; z-index:100; pointer-events:none; color:var(--pink); font-size:17px; transition:transform .08s linear, color .2s, scale .2s; }
+.cursor-dot.hover { color:var(--rose); scale:1.5; }
+.scroll-progress { position:fixed; inset:0 0 auto; height:3px; z-index:120; background:var(--pink); transform-origin:left; transform:scaleX(0); pointer-events:none; }
+.back-to-top { position:fixed; right:22px; bottom:22px; z-index:25; border:1px solid var(--brown); background:var(--white); color:var(--brown); padding:9px 12px; font:10px 'DM Mono'; opacity:0; transform:translateY(12px); pointer-events:none; transition:.25s; }
+.back-to-top.visible { opacity:1; transform:none; pointer-events:auto; }
+.scroll-reveal { transition:opacity .65s ease, transform .65s ease; }
+.js-ready .scroll-reveal { opacity:0; transform:translateY(22px); }
+.js-ready .scroll-reveal.is-visible { opacity:1; transform:none; }
+.sticker,.paper-note,.project-art { transition:transform .35s ease; }
+.sticker:hover { transform:translateY(-5px) rotate(8deg) scale(1.06); }
+.desktop-rail { position:absolute; top:72px; left:24px; z-index:4; width:104px; }
+.desktop-shortcuts { display:grid; gap:14px; width:100%; }
+.desktop-shortcut { display:grid; justify-items:center; gap:3px; padding:6px 4px; color:var(--brown); text-align:center; border:1px solid transparent; border-radius:4px; transition:background-color .2s, transform .2s; }
+.desktop-shortcut:hover,.desktop-shortcut:focus-visible { background:rgba(255,253,248,.72); border-color:var(--line); transform:translateY(-2px); outline:none; }
+.shortcut-icon { display:grid; place-items:center; width:42px; height:36px; border:1px solid var(--brown); background:var(--blush); box-shadow:3px 3px 0 var(--pink); color:var(--rose); font:21px 'DM Mono'; }
+.desktop-shortcut b { font:9px 'DM Mono'; }.desktop-shortcut small { font:8px 'DM Mono'; opacity:.7; }
+.desktop-taskbar { position:sticky; bottom:0; z-index:15; display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:12px; width:100%; max-width:100vw; min-height:42px; padding:6px 18px; background:rgba(245,212,223,.96); border-top:1px solid var(--brown); box-shadow:0 -4px 12px rgba(80,51,47,.1); font:10px 'DM Mono'; }
+.taskbar-start { display:flex; align-items:center; gap:7px; flex:0 0 auto; padding:6px 10px; background:var(--pink); border:1px solid var(--brown); }.taskbar-start span { color:var(--brown); font-size:15px; }.taskbar-status { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; opacity:.7; }.taskbar-links { display:flex; flex:0 0 auto; gap:6px; min-width:0; }.taskbar-links a { white-space:nowrap; padding:6px 8px; border:1px solid var(--line); background:var(--white); }.taskbar-links a:hover,.taskbar-links a:focus-visible { background:var(--pink); outline:none; }
+.retro-window.is-draggable { touch-action:none; }.retro-window.is-dragging { cursor:grabbing; box-shadow:12px 15px 0 rgba(80,51,47,.2); }
+
+/* Night mode palette: warm chocolate base, mauve surfaces, soft ivory type. */
+.night {
+  --cream:#3b2729;
+  --white:#705363;
+  --pink:#d28da9;
+  --blush:#8b6373;
+  --brown:#f7e4dc;
+  --espresso:#291b1d;
+  --rose:#e2a2b8;
+  --line:rgba(247,228,220,.28);
+  --shadow:8px 10px 0 rgba(20,10,14,.28);
+}
+.night .topbar { background:rgba(59,39,41,.94); }
+.night .window-bar { background:var(--espresso); color:var(--brown); }
+.night .window-bar button { border-color:var(--brown); color:var(--brown); }
+.night .button { background:var(--espresso); color:var(--brown); border-color:var(--espresso); }
+.night .button:hover,.night .hero-nav a:hover,.night .taskbar-links a:hover { background:var(--pink); color:var(--espresso); }
+.night .hero:after { color:var(--blush); }
+.night .intro { background:var(--cream); }
+.night .desktop-taskbar { background:rgba(111,83,99,.96); border-color:var(--brown); box-shadow:0 -4px 12px rgba(20,10,14,.24); }
+.night .back-to-top { background:var(--white); color:var(--brown); border-color:var(--brown); }
+.night input,.night textarea { color:var(--brown); }
+
+@media (max-width:800px) {
+  .hero-nav { position:relative; left:auto; bottom:auto; margin-top:35px; }
+  .bio-window { margin:35px 7% 0; transform:rotate(-1deg); }
+  .topbar nav a:nth-child(n+4) { display:none; }
+  .cursor-dot { display:none; }
+  .desktop-rail { position:relative; top:auto; left:auto; width:auto; padding:12px 7vw 0; }
+  .desktop-shortcuts { display:flex; flex-wrap:wrap; width:auto; gap:6px; }
+  .desktop-shortcut { min-width:76px; }.shortcut-icon { width:34px; height:30px; font-size:17px; }.desktop-taskbar { position:relative; grid-template-columns:auto minmax(0,1fr); gap:8px; padding:8px 12px; }.taskbar-status { min-width:0; }.taskbar-links { grid-column:1/-1; width:100%; overflow:auto; }.taskbar-links a { white-space:nowrap; }
+}

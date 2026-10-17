@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>admin — Aashika Pandey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="refinement.css" /><link rel="stylesheet" href="admin.css" />
+</head>
+<body class="subpage admin-page"><div class="grain" aria-hidden="true"></div>
+  <header class="topbar page-topbar"><a class="brand" href="index.html">START <i>✳</i></a><span class="admin-label">ADMIN.EXE</span><button class="mode-toggle" id="modeToggle" aria-label="Switch to night mode"><span class="theme-orbit" aria-hidden="true"><i></i></span><b>day mode</b></button></header>
+  <main class="admin-main">
+    <section class="admin-login retro-window" id="loginPanel"><div class="window-bar"><b>ADMIN LOGIN</b><button aria-label="Return home" onclick="location.href='index.html'">×</button></div><form id="loginForm"><label for="loginEmail">email<input id="loginEmail" name="email" type="email" autocomplete="username" required /></label><label for="loginPassword">password<input id="loginPassword" name="password" type="password" autocomplete="current-password" required /></label><button class="button" type="submit">sign in ↗</button><p class="admin-status" id="loginStatus" role="alert"></p></form></section>
+    <section class="admin-dashboard" id="dashboard" hidden>
+      <div class="admin-heading"><div><p class="eyebrow">private workspace / authenticated</p><h1>control <i>room</i></h1></div><button class="button button-light" id="logoutButton" type="button">sign out</button></div>
+      <div class="admin-grid">
+        <section class="retro-window admin-window"><div class="window-bar"><b>PROJECTS.DB</b></div><form id="projectForm"><input type="hidden" id="projectId" /><label for="projectTitle">title<input id="projectTitle" required maxlength="120" /></label><label for="projectSlug">slug<input id="projectSlug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label><label for="projectDescription">description<textarea id="projectDescription" required maxlength="2000"></textarea></label><label for="projectTech">technologies <small>comma separated</small><input id="projectTech" placeholder="HTML, CSS, JavaScript" /></label><label for="projectCategory">category<input id="projectCategory" maxlength="60" /></label><label for="projectImage">image URL<input id="projectImage" type="url" /></label><label for="projectLive">live URL<input id="projectLive" type="url" /></label><label for="projectGithub">GitHub URL<input id="projectGithub" type="url" /></label><label class="check-row"><input id="projectFeatured" type="checkbox" /> featured</label><label class="check-row"><input id="projectPublished" type="checkbox" /> published</label><label for="projectOrder">display order<input id="projectOrder" type="number" min="0" value="0" /></label><div class="admin-actions"><button class="button" type="submit">save project ↗</button><button class="text-button" id="clearProject" type="button">clear</button></div><p class="admin-status" id="projectStatus" role="status"></p></form><div id="projectList" class="admin-list"></div></section>
+        <section class="retro-window admin-window"><div class="window-bar"><b>INBOX.EXE</b></div><div id="messageList" class="admin-list"><p class="admin-muted">loading messages…</p></div><p class="admin-status" id="messageStatus" role="status"></p></section>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script><script src="admin.js"></script>
+</body></html>

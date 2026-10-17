@@ -1,0 +1,194 @@
+/* About-specific art direction. Kept scoped so the desktop-window language can evolve independently. */
+.about-section {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--blush);
+  background-image: radial-gradient(rgba(80,51,47,.12) .7px, transparent .7px);
+  background-size: 9px 9px;
+}
+.about-section::before {
+  content: 'meet_aashika.exe';
+  position: absolute;
+  top: 28px;
+  right: 8vw;
+  padding: 8px 12px;
+  border: 1px solid var(--brown);
+  background: var(--cream);
+  font: 10px 'DM Mono';
+  transform: rotate(2deg);
+}
+.about-section::after {
+  content: '♡  always learning  ✳  always experimenting';
+  position: absolute;
+  right: 5vw;
+  bottom: 11vw;
+  color: var(--rose);
+  font: 12px 'DM Mono';
+  transform: rotate(-7deg);
+}
+.about-section .section-intro { position: relative; z-index: 2; }
+.about-page-heading { grid-column: 1 / -1; max-width: 600px; position: relative; z-index: 2; }
+.about-page-heading h1 { display:block; max-width:100%; overflow:visible; font-size: clamp(4rem, 7.5vw, 7.5rem); line-height:.82; letter-spacing:-.08em; margin:24px 0; }
+.about-page-heading h1 i { font-family: 'DM Serif Display'; font-weight: 400; }
+.about-page-heading > p:last-child { max-width: 420px; font: 1.1rem/1.4 'DM Serif Display'; }
+.about-section .section-intro::after {
+  content: 'hi, i\'m aashika ♡';
+  display: block;
+  margin-top: 26px;
+  color: var(--rose);
+  font: italic 22px 'DM Serif Display';
+  transform: rotate(-4deg);
+}
+.about-section .profile-window,
+.about-section .bio-window,
+.about-section .socials-window { border-radius: 2px; }
+.about-section .profile-window::before {
+  content: '✦  photo / speaking moment  ✦';
+  position: absolute;
+  left: 18px;
+  top: -28px;
+  color: var(--rose);
+  font: 10px 'DM Mono';
+  transform: rotate(-4deg);
+}
+.about-section .profile-photo {
+  position: relative;
+  width: min(72%, 260px);
+  margin: 28px auto 36px;
+  padding: 8px 8px 30px;
+  background: var(--white);
+  border: 1px solid var(--brown);
+  box-shadow: 7px 8px 0 rgba(80,51,47,.18);
+  transform: rotate(-3deg);
+}
+.about-section .profile-photo::before {
+  content: '♡ AASHIKA / LIVE';
+  position: absolute;
+  top: -19px;
+  left: 9px;
+  color: var(--rose);
+  font: 9px 'DM Mono';
+  transform: rotate(-2deg);
+}
+.about-section .profile-photo::after {
+  content: '✦';
+  position: absolute;
+  right: -22px;
+  bottom: 22px;
+  color: var(--pink);
+  font-size: 29px;
+  transform: rotate(12deg);
+}
+.about-section .profile-photo img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: 54% center;
+  border: 1px solid var(--brown);
+  filter: saturate(.9) contrast(1.02);
+}
+.about-section .profile-photo figcaption {
+  position: absolute;
+  bottom: 8px;
+  left: 11px;
+  color: var(--brown);
+  font: italic 12px 'DM Serif Display';
+}
+.about-desktop { display:grid; grid-template-columns: 1fr 1.05fr .9fr; grid-template-rows:auto auto auto auto; gap:28px; padding-top:7vw; padding-bottom:9vw; }
+.about-desktop .about-page-heading { grid-column:1 / -1; }
+.about-desktop .profile-window { grid-column:1 / 2; grid-row:2 / span 2; align-self:start; margin:34px 0 0; transform:rotate(-1deg); }
+.about-desktop .bio-window { grid-column:2 / 4; grid-row:2; align-self:start; margin:0; transform:none; }
+.about-desktop .things-window { grid-column:2 / 4; grid-row:3; align-self:start; transform:rotate(-.5deg); }
+.about-desktop .exploring-window { grid-column:1 / 2; grid-row:4; transform:none; }
+.about-desktop .skills-window { grid-column:2 / 3; grid-row:4; transform:none; }
+.about-desktop .online-window { grid-column:3 / 4; grid-row:4; transform:none; }
+.about-desktop .profile-body { height:auto; min-height:480px; display:flex; flex-direction:column; justify-content:center; }
+.about-desktop .profile-photo { width:min(68%,260px); margin:35px auto 18px; }
+.about-desktop .profile-photo img { height:290px; }
+.profile-copy { padding:0 18px 20px; text-align:center; }
+.profile-copy h2 { font:italic 30px 'DM Serif Display'; letter-spacing:-.04em; margin:0 0 7px; }
+.profile-copy p { margin:0 0 6px; font:11px 'DM Mono'; }
+.profile-copy span { color:var(--rose); font:9px 'DM Mono'; }
+.mini-card-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:20px; }
+.mini-card-grid article { padding:13px; min-height:105px; background:var(--cream); border:1px dashed var(--brown); transform:rotate(-1deg); }
+.mini-card-grid article:nth-child(even) { background:var(--blush); transform:rotate(1deg); }
+.mini-card-grid small { color:var(--rose); font:9px 'DM Mono'; text-transform:uppercase; }
+.mini-card-grid h3 { margin:9px 0 6px; font:italic 20px 'DM Serif Display'; }
+.mini-card-grid p,.mini-card-grid a { margin:0; font:10px/1.4 'DM Mono'; }
+.mini-card-grid a { display:block; margin-top:10px; text-decoration:underline; }
+.explore-notes { display:grid; gap:10px; padding:22px; }
+.explore-notes span { padding:10px 12px; background:var(--white); border-left:4px solid var(--pink); font:10px 'DM Mono'; }
+.terminal-copy { padding:22px; background:var(--espresso); color:var(--blush); font:11px/1.7 'DM Mono'; min-height:150px; }
+.terminal-copy p { margin:0; }.terminal-copy .muted { color:var(--pink); }.terminal-copy ul { list-style:none; padding:0; margin:10px 0 0; color:var(--white); }
+.online-window .social-list { gap:11px; }
+.online-window .social-list span { font-size:10px; }
+.skills-window-intro { padding:15px 20px 4px; }.skills-window-intro p { margin:0; font:italic 19px 'DM Serif Display'; }.skills-window-intro span { display:block; margin-top:7px; color:var(--rose); font:9px 'DM Mono'; }
+.skill-groups { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:15px 20px; }.skill-groups > div { display:flex; gap:6px; flex-wrap:wrap; align-content:flex-start; }.skill-groups small { width:100%; margin-bottom:3px; color:var(--rose); font:9px 'DM Mono'; text-transform:uppercase; }.skill-groups span { padding:6px 8px; border:1px solid var(--brown); background:var(--white); font:9px 'DM Mono'; transition:.2s; }.skill-groups span:hover { background:var(--pink); transform:translateY(-2px); }
+.skills-marquee { overflow:hidden; display:grid; gap:5px; padding:8px 0; border-top:1px dashed var(--line); border-bottom:1px dashed var(--line); }.marquee-row { display:flex; width:max-content; gap:6px; animation:skill-marquee 24s linear infinite; }.marquee-row span { padding:7px 10px; background:var(--brown); color:var(--white); font:9px 'DM Mono'; }.row-reverse { animation-direction:reverse; animation-duration:28s; }.skills-window.marquee-paused .marquee-row { animation-play-state:paused; }.marquee-toggle { margin:11px 20px 16px; border:1px solid var(--brown); background:var(--cream); padding:7px 10px; font:9px 'DM Mono'; }.social-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:15px; }.social-grid a { display:grid; grid-template-columns:20px 1fr; column-gap:6px; padding:9px; background:var(--white); border:1px solid transparent; font:16px 'DM Mono'; }.social-grid a:hover,.social-grid a:focus-visible { border-color:var(--brown); background:var(--blush); outline:none; }.social-grid a span { font-size:10px; }.social-grid a small { grid-column:2; color:var(--rose); font:8px 'DM Mono'; }
+@keyframes skill-marquee { to { transform:translateX(-50%); } }
+@media (prefers-reduced-motion:reduce) { .marquee-row { animation:none; }.js-ready .scroll-reveal { opacity:1; transform:none; }.scroll-reveal { transition:none; } }
+.back-home { grid-column:1 / -1; justify-self:start; margin-top:10px; }
+@media (max-width:800px) {
+  .about-desktop { display:block; padding-top:18vw; }
+  .about-desktop .about-page-heading { margin-bottom:50px; }
+  .about-desktop .profile-window,.about-desktop .bio-window,.about-desktop .things-window,.about-desktop .exploring-window,.about-desktop .skills-window,.about-desktop .online-window { margin:35px 0; transform:none; }
+  .about-desktop .profile-body { min-height:0; }
+  .skill-groups { grid-template-columns:1fr; }.social-grid { grid-template-columns:1fr 1fr; }
+}
+.about-section:not(.about-desktop) .bio-window { margin-top: 36px; }
+.about-section .bio-window .window-copy::before {
+  content: 'not a corporate bio — just me, learning by building.';
+  display: block;
+  margin-bottom: 15px;
+  color: var(--rose);
+  font: 10px 'DM Mono';
+}
+.about-section .about-facts > div {
+  position: relative;
+  min-height: 160px;
+  padding: 4px 18px 12px;
+  border-left: 1px solid var(--line);
+}
+.about-section .about-facts > div::before {
+  content: '✳';
+  position: absolute;
+  top: -4px;
+  right: 12px;
+  color: var(--pink);
+}
+.about-section .about-facts h3 { margin-top: 0; }
+.about-section .about-facts p { margin-bottom: 0; }
+.collage-title {
+  position: absolute;
+  z-index: 4;
+  top: 51%;
+  left: 3%;
+  padding: 12px 16px;
+  background: var(--white);
+  border: 1px solid var(--brown);
+  box-shadow: 5px 6px 0 var(--pink);
+  font: 12px/1 'DM Mono';
+  letter-spacing: -.05em;
+  transform: rotate(-7deg);
+}
+.collage-title i {
+  display: block;
+  color: var(--rose);
+  font: 28px/.85 'DM Serif Display';
+  letter-spacing: -.08em;
+}
+.collage-title small {
+  display: block;
+  margin-top: 9px;
+  max-width: 145px;
+  font: 8px/1.3 'DM Mono';
+  letter-spacing: 0;
+}
+@media (max-width: 800px) {
+  .about-section::before { top: 20px; right: 7vw; }
+  .about-section::after { display: none; }
+  .about-section .about-facts > div { border-left: 0; border-top: 1px solid var(--line); padding-top: 18px; }
+  .collage-title { top: 52%; left: -2%; transform: rotate(-5deg) scale(.86); transform-origin: left top; }
+}
